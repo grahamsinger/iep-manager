@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>IEP Case Manager</title>
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="app/assets/css/index.css">
+  </head>
+  <body>
+      <h2>Hello World</h2>
+      <p id="testing">
+          Graham Singer
+      </p>
+  </body>
+  <script data-main="main" src="node_modules/requirejs/require.js"></script>
+  <script>
+    require(['main'], function(){
+      //This is going to load in app.js which will then start our app.
+      require(['app/js/app']);
+    });
+    </script>
+</html>
