@@ -1,0 +1,10 @@
+a {
+  cursor: pointer;
+}
+#new-student-name{
+  width: 70%;
+}
+.alert{
+  margin-top: 10px;
+  display: none;
+}

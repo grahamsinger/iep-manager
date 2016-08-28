@@ -1,22 +1,114 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <title>IEP Case Manager</title>
     <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="app/assets/css/index.css">
-  </head>
-  <body>
-      <h2>Hello World</h2>
-      <p id="testing">
-          Graham Singer
-      </p>
-  </body>
-  <script data-main="main" src="node_modules/requirejs/require.js"></script>
-  <script>
-    require(['main'], function(){
-      //This is going to load in app.js which will then start our app.
-      require(['app/js/app']);
+    <!-- <script src="//localhost:35727/livereload.js"></script> -->
+</head>
+
+<body>
+    <h1>Students</h1>
+    <div class="container-fluid" id="container-main">
+        <div class="col-md-5">
+            <div id="region-main"></div>
+            <div id="add-student"></div>
+        </div>
+        <div class="col-md-5" id="#student-view-manager">
+            <div id="the-reeg">
+
+            </div>
+        </div>
+    </div>
+
+</body>
+<script data-main="main" src="node_modules/requirejs/require.js"></script>
+<script>
+    require(['main'], function() {
+        //This is going to load in app.js which will then start our app.
+        require(['app/js/app']);
     });
-    </script>
+</script>
+<script type="x-template/underscore" id="create-student-view">
+    <input class="form-control" id="new-student-name" type="text" name="name" value="" placeholder="Enter Student Name">
+    <input class="btn btn-default" id="create-student-btn" type="button" name="name" value="Add student">
+</script>
+
+<script type="x-template/underscore" id="student-link-view">
+
+    <a class="student" id="student-<%- _id %>">
+        <%- NAME %>
+    </a>
+</script>
+
+<script type="template" id="student-info-view">
+
+    <h2><%- NAME %>&rsquo;s Info</h2>
+    <ul>
+
+        <div class="info-line" attr="_GOALS"><strong>Number of Goals:</strong>
+            <span><%- _GOALS %></span>
+        </div>
+        <div class="info-line" attr="_in"><strong>Percentage in:</strong>
+            <span><%- _in %></span>
+        </div>
+        <div class="info-line" attr="_out"><strong>Percentage out:</strong>
+            <span><%- _out %></span>
+        </div>
+        <div class="info-line" attr="ANNUAL_DUE"><strong>ANNUAL DUE:</strong>
+            <span><%- ANNUAL_DUE %></span>
+        </div>
+        <div class="info-line" attr="BSP">
+            <strong>Have BSP:</strong>
+            <span><%- BSP %></span>
+        </div>
+        <div class="info-line" attr="CONTENT_AREA_NEED">
+            <strong>CONTENT AREA NEED:</strong>
+            <span> <%- CONTENT_AREA_NEED %></span>
+        </div>
+
+        <div class="info-line" attr="DIS"><strong>DIS:</strong>
+            <span><%- DIS %></span>
+        </div>
+        <div class="info-line" attr="DOB"><strong>DOB:</strong>
+            <span><%- DOB %></span>
+        </div>
+        <div class="info-line" attr="ELEM"><strong>ELEM:</strong>
+            <span><%- ELEM %></span>
+        </div>
+        <div class="info-line" attr="GR"><strong>GR:</strong>
+            <span><%- GR %></span>
+        </div>
+        <div class="info-line" attr="INITIAL_IEP"><strong>INITIAL IEP:</strong>
+            <span><%- INITIAL_IEP %></span>
+        </div>
+        <div class="info-line" attr="MINUTES"><strong>MINUTES:</strong>
+            <span><%- MINUTES %></span>
+        </div>
+        <div class="info-line" attr="NAME"><strong>NAME:</strong>
+            <span><%- NAME %></span>
+        </div>
+        <div class="info-line" attr="PULL_OUT"><strong>PULL OUT:</strong>
+            <span><%- PULL_OUT %></span>
+        </div>
+        <div class="info-line" attr="PUSH_IN"><strong>PUSH IN:</strong>
+            <span><%- PUSH_IN %></span>
+        </div>
+        <div class="info-line" attr="TRI_DUE"><strong>TRI DUE:</strong>
+            <span><%- TRI_DUE %></span>
+        </div>
+    </ul>
+
+    <!-- Indicates a successful or positive action -->
+    <button type="button" class="btn btn-success" id="save-info-btn">Save Info</button>
+
+    <button type="button" class="btn btn-warning" id="edit-info-btn">Edit Info</button>
+
+    <div><p class="alert alert-success" id="successful-save" >Successful Save</p></div>
+    <div><p class="alert alert-danger" id="error-save" >Error Saving</p></div>
+
+</script>
+
 </html>

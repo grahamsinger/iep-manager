@@ -1,0 +1,33 @@
+{
+  "name": "iep-manager",
+  "version": "1.0.0",
+  "description": "IEP Case Manager",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grahamsinger/iep-manager.git"
+  },
+  "author": "Graham Singer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/grahamsinger/iep-manager/issues"
+  },
+  "homepage": "https://github.com/grahamsinger/iep-manager#readme",
+  "dependencies": {
+    "grunt": "^0.4.5",
+    "grunt-serve": "^0.1.6",
+    "mongodb": "^2.2.7"
+  },
+  "devDependencies": {
+    "connect-livereload": "^0.5.4",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-qunit": "^1.2.0",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-contrib-watch": "^1.0.0"
+  }
+}
